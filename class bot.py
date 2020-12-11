@@ -5,17 +5,18 @@ from time import sleep
 from os import startfile, getlogin
 import pandas as pd
 
+# todo click on google meet mute and camera off button
 def zoom_meeting(meeting_id:str, password:str):
     """Joins zoom meeting with provided meeting_id and password."""
     startfile(f"C:\\Users\\{getlogin()}\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe")
-    sleep(10)
+    sleep(5)
     p.click(530, 281)
     sleep(2)
     p.click(651, 323)
     sleep(1)
     p.typewrite(meeting_id)
     p.press('enter')
-    sleep(5)
+    sleep(3)
     p.typewrite(password)
     p.press('enter')
     exit()
@@ -26,6 +27,9 @@ def google_meet(meeting_link:str):
     """
     wb = webbrowser.Chrome(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
     wb.open_new_tab(meeting_link)
+    sleep(5)
+    p.click(410,583)
+    p.click(487,583)
     quit()
 
 def alert(lecture:str):
