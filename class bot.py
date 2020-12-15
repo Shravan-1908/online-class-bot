@@ -49,8 +49,8 @@ def join_class():
     current_minute = int(datetime.now().strftime("%M"))
 
     for _, item in timetable.iterrows():
-        class_hour = int(item["Class Time"].split(":")[0])
-        class_minute = int(item["Class Time"].split(":")[-1])
+        class_hour = int(item["Class Time"].strftime("%H")[0])
+        class_minute = int(item["Class Time"].strftime("%M")[-1])
 
         if class_hour == current_hour and current_minute in range(class_minute, class_minute + 10):
             class_name = item["Class Name"]
