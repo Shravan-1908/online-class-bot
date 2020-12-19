@@ -8,7 +8,7 @@ import pandas as pd
 # todo click on google meet mute and camera off button
 def zoom_meeting(meeting_id:str, password:str):
     """Joins zoom meeting with provided meeting_id and password."""
-    startfile(f"C:\\Users\\{getlogin()}\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe")
+    startfile("") # Put your zoom.exe file location here
     sleep(5)
     p.click(530, 281)
     sleep(2)
@@ -25,7 +25,7 @@ def google_meet(meeting_link:str):
     """
     Joins meetings held in google_meet.
     """
-    wb = webbrowser.Chrome(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+    wb = webbrowser.Chrome("") # Put your chrome browser location here 
     wb.open_new_tab(meeting_link)
     sleep(5)
     p.click(410,583)
@@ -43,7 +43,7 @@ def join_class():
     """
     Checks if there is any class on a particular date by extracting data from timetable.xlsx.
     """
-    timetable = pd.read_excel(r"C:\Users\Lenovo\Documents\MS Office\Excel files\timetable.xlsx", sheet_name=datetime.now().strftime("%A"))
+    timetable = pd.read_excel("", sheet_name=datetime.now().strftime("%A")) # Put your timetable.xlsx file location here
     current_time = datetime.now().strftime("%H:%M")
     current_hour = int(datetime.now().strftime("%H"))
     current_minute = int(datetime.now().strftime("%M"))
