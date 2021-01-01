@@ -43,7 +43,7 @@ def join_class():
     """
     Checks if there is any class on a particular date by extracting data from timetable.xlsx.
     """
-    timetable = pd.read_excel(r"C:\Users\Lenovo\Documents\MS Office\Excel files\timetable.xlsx", sheet_name=datetime.now().strftime("%A"))
+    timetable = pd.read_excel(r"timetable.xlsx", sheet_name=datetime.now().strftime("%A"))
     current_time = datetime.now().strftime("%H:%M")
     current_hour = int(datetime.now().strftime("%H"))
     current_minute = int(datetime.now().strftime("%M"))
